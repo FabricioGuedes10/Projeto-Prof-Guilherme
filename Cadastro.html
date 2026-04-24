@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>Cadastro</h1>
+
+<nav>
+  <a href="index.html">Início</a>
+  <a href="catalogo.html">Catálogo</a>
+</nav>
+
+<form action="#" method="post">
+
+<label for="nome">Nome:</label><br>
+<input type="text" id="nome" name="nome" required><br><br>
+
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" required><br><br>
+
+<label for="senha">Senha:</label><br>
+<input type="password" id="senha" name="senha" minlength="6" required><br><br>
+
+<label for="confirmar">Confirmar Senha:</label><br>
+<input type="password" id="confirmar" required><br><br>
+
+<button type="submit">Cadastrar</button>
+
+</form>
+
+<p>Já quer ver os produtos?</p>
+<a href="catalogo.html">Ir para o catálogo</a>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const senha = document.getElementById("senha").value;
+    const confirmar = document.getElementById("confirmar").value;
+
+    if (senha !== confirmar) {
+        alert("As senhas não coincidem!");
+        return;
+    }
+
+    alert("Cadastro realizado com sucesso!");
+    this.reset();
+});
+</script>
+
+</body>
+</html>
